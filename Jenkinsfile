@@ -23,14 +23,6 @@ pipeline {
 				. venv/bin/activate
 				bandit -f xml -o bandit-output.xml -r . || true	
 				'''
-				recordIssues(
-					 tools: [
-						warnings(
-							pattern: 'bandit-output.xml',
-							parserName: 'Bandit Parser'
-						)			
-					]
-				)
 					
 			}
 		}			
