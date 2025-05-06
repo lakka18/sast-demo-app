@@ -11,7 +11,7 @@ pipeline {
 			steps {
 				sh '''
 				python3 -m venv venv
-				.venv/bin/activate
+				. venv/bin/activate
 				pip install --upgrade pip
 				pip install bandit '''
 			}
@@ -19,8 +19,8 @@ pipeline {
 		stage('SAST Analysis') {
 			steps {
 				sh '''
-				.venv/bin/activate
-				bandit -f xml -o bandit-output.xml -r . || true'
+				. venv/bin/activate
+				bandit -f xml -o bandit-output.xml -r . || true
 				recordIssues tools: [bandit(pattern: 'bandit-output.xml')]'''
 			}
 		}			
