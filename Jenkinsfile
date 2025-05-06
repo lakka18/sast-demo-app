@@ -26,8 +26,8 @@ pipeline {
 				recordIssues(
 					 tools: [
 						warnings(
-							pattern: 'bandit-output.xml'),
-							parserName: 'Bandit Parser']
+							pattern: 'bandit-output.xml',
+							parserName: 'Bandit Parser'
 						)			
 					]
 				)
