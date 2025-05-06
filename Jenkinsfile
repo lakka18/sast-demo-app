@@ -30,6 +30,7 @@ pipeline {
 							parserName: 'Bandit Parser']
 						)			
 					]
+				)
 					
 			}
 		}			
